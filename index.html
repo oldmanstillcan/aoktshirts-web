@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AOK T-Shirts — Art of Kali | Aloha Over Konformity</title>
+  <meta name="description" content="AOK T-Shirts — Polynesian culture, Filipino martial arts, combat sports, and Web3 lifestyle apparel. Built different.">
+  <style>
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --border: #2a2a2a;
+      --text: #f0ece4;
+      --muted: #888;
+      --gold: #c9a84c;
+      --gold-light: #e8c96a;
+      --red: #c0392b;
+      --teal: #2a9d8f;
+      --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--gold); text-decoration: none; }
+    a:hover { color: var(--gold-light); text-decoration: underline; }
+
+    /* ── NAV ─────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(13,13,13,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      z-index: 100;
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .nav-links a:hover { color: var(--text); text-decoration: none; }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    .hero {
+      padding: 100px 24px 80px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 7vw, 72px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 36px;
+      line-height: 1.6;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+    .btn:hover { opacity: 0.85; text-decoration: none; }
+    .btn-primary { background: var(--gold); color: #000; }
+    .btn-outline { border: 1px solid var(--border); color: var(--muted); }
+
+    /* ── DIVIDER ─────────────────────────────────────────── */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* ── SECTION ─────────────────────────────────────────── */
+    section {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 24px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    /* ── ACRONYM BLOCK ───────────────────────────────────── */
+    .acronym-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 2px;
+      margin-top: 48px;
+    }
+
+    .acronym-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 28px 24px;
+    }
+
+    .acronym-letter {
+      font-size: 48px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 10px;
+      opacity: 0.3;
+    }
+
+    .acronym-title {
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+    }
+
+    .acronym-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── COLLECTIONS ─────────────────────────────────────── */
+    .collections-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2px;
+      margin-top: 48px;
+    }
+
+    .collection-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 32px 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .collection-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+
+    .collection-card.polynesian::before { background: var(--teal); }
+    .collection-card.fma::before { background: var(--red); }
+    .collection-card.web3::before { background: #8b5cf6; }
+    .collection-card.omsc::before { background: var(--gold); }
+    .collection-card.combat::before { background: #e76f51; }
+
+    .collection-icon {
+      font-size: 32px;
+      margin-bottom: 14px;
+    }
+
+    .collection-name {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .collection-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ── STORY ───────────────────────────────────────────── */
+    .story-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    @media (max-width: 700px) {
+      .story-layout { grid-template-columns: 1fr; gap: 32px; }
+    }
+
+    .story-text p {
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .story-text p strong {
+      color: var(--text);
+    }
+
+    .story-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 24px;
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* ── ETSY BANNER ─────────────────────────────────────── */
+    .etsy-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 48px 24px;
+      text-align: center;
+    }
+
+    .etsy-banner h2 {
+      margin-bottom: 12px;
+    }
+
+    .etsy-banner p {
+      color: var(--muted);
+      margin-bottom: 28px;
+      font-size: 16px;
+    }
+
+    /* ── PRIVACY POLICY ──────────────────────────────────── */
+    #privacy {
+      border-top: 1px solid var(--border);
+    }
+
+    .privacy-content {
+      max-width: 760px;
+    }
+
+    .privacy-content h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin: 32px 0 10px;
+      color: var(--text);
+    }
+
+    .privacy-content h3:first-of-type { margin-top: 0; }
+
+    .privacy-content p {
+      color: var(--muted);
+      margin-bottom: 12px;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    .privacy-content ul {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.7;
+      padding-left: 20px;
+      margin-bottom: 12px;
+    }
+
+    .privacy-content ul li { margin-bottom: 4px; }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 40px 24px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-logo {
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      margin-bottom: 10px;
+    }
+
+    .footer-tagline {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: #444;
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 600px) {
+      .nav-links { display: none; }
+      .hero { padding: 60px 20px 60px; }
+      section { padding: 60px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">AOK T-Shirts</div>
+      <ul class="nav-links">
+        <li><a href="#collections">Collections</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#privacy">Privacy</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-eyebrow">Art of Kali · Aloha Over Konformity</div>
+    <h1>Wear What<br><em>You Stand For</em></h1>
+    <p class="hero-sub">
+      Apparel built on culture, discipline, and identity. Polynesian roots, Filipino martial arts, combat sports, and Web3 rebellion — all cut from the same cloth.
+    </p>
+    <div class="cta-group">
+      <a class="btn btn-primary" href="https://www.etsy.com/shop/AOKTshirts" target="_blank" rel="noopener">Shop on Etsy</a>
+      <a class="btn btn-outline" href="#collections">See Collections</a>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ACRONYM -->
+  <section>
+    <div class="section-label">The Name</div>
+    <h2>AOK Means<br>More Than One Thing</h2>
+    <div class="acronym-grid">
+      <div class="acronym-card">
+        <div class="acronym-letter">I</div>
+        <div class="acronym-title">Art of Kali</div>
+        <div class="acronym-desc">Filipino martial arts — Arnis, Eskrima, Kali. Discipline, respect, and the beauty of a system built over generations.</div>
+      </div>
+      <div class="acronym-card">
+        <div class="acronym-letter">II</div>
+        <div class="acronym-title">Aloha Over Konformity</div>
+        <div class="acronym-desc">Polynesian spirit meets non-conformist identity. Culture over trend. Roots over hype. Connection over algorithm.</div>
+      </div>
+      <div class="acronym-card">
+        <div class="acronym-letter">III</div>
+        <div class="acronym-title">Age Over Kryptonite</div>
+        <div class="acronym-desc">OldManStillCan. The body keeps score but so does the will. Built for those who refuse to be stopped by the calendar.</div>
+      </div>
+      <div class="acronym-card">
+        <div class="acronym-letter">IV</div>
+        <div class="acronym-title">Anarchic On-Chain Kulture</div>
+        <div class="acronym-desc">Web3 isn't a trend — it's a stance. Decentralized identity, ownership, and rebellion. The chain doesn't lie.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- COLLECTIONS -->
+  <section id="collections">
+    <div class="section-label">Collections</div>
+    <h2>Five Lanes.<br>One Identity.</h2>
+    <div class="collections-grid">
+      <div class="collection-card polynesian">
+        <div class="collection-icon">🌺</div>
+        <div class="collection-name">Polynesian</div>
+        <div class="collection-desc">Tribal patterns, Pacific identity, and the spirit of Aloha — honored, not appropriated. Wearable heritage.</div>
+      </div>
+      <div class="collection-card fma">
+        <div class="collection-icon">⚔️</div>
+        <div class="collection-name">FMA — Art of Kali</div>
+        <div class="collection-desc">Filipino Martial Arts: Arnis, Eskrima, Kali. For practitioners and those who respect where the art came from.</div>
+      </div>
+      <div class="collection-card web3">
+        <div class="collection-icon">⛓️</div>
+        <div class="collection-name">Web3 &amp; Crypto</div>
+        <div class="collection-desc">Decentralized by default. On-chain culture, DeFi philosophy, and the aesthetic of the blockchain generation.</div>
+      </div>
+      <div class="collection-card omsc">
+        <div class="collection-icon">🔥</div>
+        <div class="collection-name">OMSC</div>
+        <div class="collection-desc">OldManStillCan. The relentless pursuit of self. Movement, discipline, resilience — for those who build at any age.</div>
+      </div>
+      <div class="collection-card combat">
+        <div class="collection-icon">🥊</div>
+        <div class="collection-name">Combat Sports</div>
+        <div class="collection-desc">MMA, boxing, grappling, Muay Thai. The gym is the church. The mat doesn't lie. Gear that understands the grind.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- STORY -->
+  <section id="story">
+    <div class="story-layout">
+      <div class="story-text">
+        <div class="section-label">Our Story</div>
+        <h2>Built by One Person. Built for Real.</h2>
+        <p>
+          AOK T-Shirts started from a simple idea: <strong>your apparel should mean something.</strong> Not a logo slapped on a blank. Not a trend drop designed for the algorithm. Something that connects to who you are and where you come from.
+        </p>
+        <p>
+          We draw from cultures and disciplines that demand respect — Filipino martial arts, Polynesian heritage, combat sports, and the emerging identity of Web3. These aren't aesthetics we borrowed. They're lived values we wear.
+        </p>
+        <p>
+          AOK is an independent brand. Everything is <strong>print-on-demand</strong> — no warehouse, no excess inventory, no waste. Your order is made when you place it.
+        </p>
+        <p>
+          The name means different things to different people. <strong>Art of Kali. Aloha Over Konformity. Age Over Kryptonite.</strong> Pick the one that fits. They're all true.
+        </p>
+      </div>
+      <div class="story-stats">
+        <div class="stat-card">
+          <div class="stat-number">5</div>
+          <div class="stat-label">Collections</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">POD</div>
+          <div class="stat-label">Print on Demand</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Meanings of AOK</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">0</div>
+          <div class="stat-label">Compromise</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SHOP CTA -->
+  <div class="etsy-banner" id="shop">
+    <div class="section-label" style="display:inline-block; margin-bottom:16px;">Shop</div>
+    <h2>Available Now on Etsy</h2>
+    <p>Browse the full AOK T-Shirts collection — Polynesian, FMA, Web3, OMSC, and Combat Sports designs.</p>
+    <a class="btn btn-primary" href="https://www.etsy.com/shop/AOKTshirts" target="_blank" rel="noopener">Visit AOK T-Shirts on Etsy</a>
+  </div>
+
+  <!-- PRIVACY POLICY -->
+  <section id="privacy">
+    <div class="section-label">Legal</div>
+    <h2>Privacy Policy</h2>
+    <p style="color: var(--muted); margin-bottom: 36px; font-size: 14px;">Effective date: January 1, 2025 &nbsp;·&nbsp; Last updated: March 2026</p>
+
+    <div class="privacy-content">
+
+      <h3>Who We Are</h3>
+      <p>AOK T-Shirts is an independent apparel brand operating at <strong>aoktshirts.com</strong>. We design and sell print-on-demand apparel across platforms including Etsy and Pinterest. This privacy policy governs data collected through this website and our third-party integrations, including the Pinterest API.</p>
+
+      <h3>Information We Collect</h3>
+      <p>We collect minimal data necessary to operate our business:</p>
+      <ul>
+        <li><strong>Contact inquiries:</strong> Name and email address when you contact us voluntarily via email.</li>
+        <li><strong>Analytics:</strong> Standard web server logs (IP address, browser type, pages visited, referral source) for site performance and security purposes.</li>
+        <li><strong>Third-party platform data:</strong> When you interact with our content on Etsy or Pinterest, those platforms collect data per their own privacy policies. We do not receive personally identifiable information from those interactions unless you initiate contact with us directly.</li>
+      </ul>
+      <p>We do not use tracking pixels, behavioral advertising cookies, or any third-party retargeting scripts on this website.</p>
+
+      <h3>Pinterest API</h3>
+      <p>AOK T-Shirts uses the Pinterest API to manage and schedule pins related to our product collections on Pinterest. This integration:</p>
+      <ul>
+        <li>Accesses only AOK T-Shirts' own Pinterest business account content (boards, pins, analytics)</li>
+        <li>Does not access, store, or process data from Pinterest users who have not explicitly connected their account to our application</li>
+        <li>Is used solely for content publication, scheduling, and basic analytics of our own account performance</li>
+        <li>Does not share Pinterest user data with any third party</li>
+      </ul>
+      <p>Pinterest's own privacy policy governs your use of Pinterest.com and its platform.</p>
+
+      <h3>How We Use Information</h3>
+      <ul>
+        <li>To respond to inquiries and customer service requests</li>
+        <li>To monitor and improve website performance</li>
+        <li>To manage our social media and e-commerce presence via authorized platform APIs</li>
+        <li>To fulfill legal obligations if required</li>
+      </ul>
+      <p>We do not sell, rent, or trade your personal information to any third party. We do not use your data for advertising targeting beyond our own branded content published to our own social accounts.</p>
+
+      <h3>Third-Party Services</h3>
+      <p>This website and our operations involve the following third-party services, each governed by their own privacy policies:</p>
+      <ul>
+        <li><strong>Etsy</strong> — our primary storefront platform (etsy.com/shop/AOKTshirts)</li>
+        <li><strong>Pinterest</strong> — social commerce and product discovery</li>
+        <li><strong>Printful / Print-on-demand providers</strong> — order fulfillment (name and shipping address shared only for order delivery)</li>
+      </ul>
+
+      <h3>Data Retention</h3>
+      <p>We retain contact inquiry information only as long as necessary to respond to your request or as required by applicable law. Analytics logs are retained for a maximum of 90 days.</p>
+
+      <h3>Your Rights</h3>
+      <p>You have the right to request access to, correction of, or deletion of any personal information we hold about you. To exercise these rights, contact us at the address below. We will respond within 30 days.</p>
+
+      <h3>Children's Privacy</h3>
+      <p>This website and our services are not directed to children under 13 years of age. We do not knowingly collect personal information from children.</p>
+
+      <h3>Changes to This Policy</h3>
+      <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated effective date. Continued use of this site after changes are posted constitutes acceptance of the updated policy.</p>
+
+      <h3>Contact</h3>
+      <p>For privacy inquiries, data requests, or any questions about this policy, contact us at:</p>
+      <p><strong>AOK T-Shirts</strong><br>
+      Email: <a href="mailto:info@aoktshirts.com">info@aoktshirts.com</a><br>
+      Website: aoktshirts.com</p>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">AOK T-SHIRTS</div>
+      <div class="footer-tagline">Art of Kali · Aloha Over Konformity · Age Over Kryptonite · Anarchic On-Chain Kulture</div>
+      <div class="footer-links">
+        <a href="#collections">Collections</a>
+        <a href="https://www.etsy.com/shop/AOKTshirts" target="_blank" rel="noopener">Etsy Shop</a>
+        <a href="#privacy">Privacy Policy</a>
+        <a href="mailto:info@aoktshirts.com">Contact</a>
+      </div>
+      <div class="footer-copy">&copy; 2025 AOK T-Shirts. All rights reserved. Print-on-demand apparel.</div>
+    </div>
+  </footer>
+
+</body>
+</html>
